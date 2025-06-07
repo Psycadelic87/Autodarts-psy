@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Autodarts WLED Control</title>
+</head>
+<body>
+  <h1>Event → WLED Effekt</h1>
+  <form method="POST">
+    {% for event, selected in config.items() %}
+      <label>{{ event }}</label>
+      <select name="{{ event }}">
+        {% for key in effects.keys() %}
+          <option value="{{ key }}" {% if key == selected %}selected{% endif %}>{{ key }}</option>
+        {% endfor %}
+      </select><br><br>
+    {% endfor %}
+    <button type="submit">Speichern</button>
+  </form>
+</body>
+</html>
