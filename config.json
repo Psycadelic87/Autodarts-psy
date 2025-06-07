@@ -1,0 +1,10 @@
+{
+  "READY": "green_static",
+  "TAKEOUT": "yellow_static",
+  "LEG_WON": "rainbow",
+  "MATCH_WON": "rainbow",
+  "TRIPLE_20": "pink_blink",
+  "BULL": "green_blink",
+  "DBULL": "green_blink",
+  "MISS": "red_blink"
+}
