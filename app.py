@@ -56,6 +56,7 @@ def send_wled_command(effect_key):
 # WebSocket handler
 def on_message(ws, message):
     config = load_config()
+    print("Autodarts WS: ", message)
     for key in config:
         if key in message:
             send_wled_command(config[key])
