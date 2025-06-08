@@ -40,11 +40,14 @@ def load_config():
         return DEFAULT_CONFIG
 
 def save_config(config):
+    
     with open(CONFIG_FILE, 'w') as f:
         json.dump(config, f)
+        
 
 # Send command to WLED
 def send_wled_command(effect_key):
+    d_wled_command(\"red_blink\")
     if effect_key not in EFFECTS:
         return
     url = f"http://{WLED_IP}/win{EFFECTS[effect_key]}"
@@ -55,8 +58,8 @@ def send_wled_command(effect_key):
 
 # WebSocket handler
 def on_message(ws, message):
+    print("💬 Nachricht von Autodarts:", message)  # <-- NEU für Debug
     config = load_config()
-    print("Autodarts WS: ", message)
     for key in config:
         if key in message:
             send_wled_command(config[key])
