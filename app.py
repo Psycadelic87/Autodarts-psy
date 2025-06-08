@@ -66,7 +66,7 @@ def on_message(ws, message):
             break
 
 def start_websocket():
-    ws = websocket.WebSocketApp("ws://localhost:3000/ws", on_message=on_message)
+    ws = websocket.WebSocketApp("ws://192.168.178.108:3000/ws", on_message=on_message)
     ws.run_forever()
 
 # Web GUI
