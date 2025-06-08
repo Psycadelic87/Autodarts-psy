@@ -74,6 +74,11 @@ def start_websocket():
 def index():
     config = load_config()
     if request.method == 'POST':
+        print("TESTTEST", )
+        config = load_config()
+    for key in config:
+        send_wled_command(config[key])
+            break
         for key in config.keys():
             config[key] = request.form.get(key)
         save_config(config)
